@@ -12,15 +12,20 @@ const Header = () => {
         <h1>Jatin Ramani</h1>
         <h5 className="text-light">Frontend Developer</h5>
         <CTA />
-        <HeaderSocials />
+        <div className="header__bottom">
+          <div className="header__socials">
+            <HeaderSocials />
+          </div>
+          <div className="centered">
+            <div className="me">
+              <img src={ME} className="meimg" alt="me" />
+            </div>
+          </div>
 
-        <div className="me">
-          <img src={ME} className="meimg" alt="me" />
+          <a href="#contact" className="scroll__down">
+            Scroll Down
+          </a>
         </div>
-
-        <a href="#contact" className="scroll__down">
-          Scroll Down
-        </a>
       </div>
     </header>
   );
