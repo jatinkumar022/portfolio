@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import "./portfolio.css";
 import IMG1 from "../../assets/portfolio1.jpg";
 import IMG2 from "../../assets/portfolio2.jpg";
@@ -36,7 +38,6 @@ const data = [
     github: "https://github.com",
     demo: "https://agriculture.freewebhostmost.com/",
   },
-
   {
     id: 5,
     image: IMG3,
@@ -52,33 +53,82 @@ const data = [
     demo: "https://dribble.com",
   },
 ];
+
+const container = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.3, ease: "easeOut" },
+  },
+};
+
 const Portfolio = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+  });
+
   return (
-    <section id="portfolio">
+    <motion.section
+      id="portfolio"
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={container}
+    >
       <h5>My Work</h5>
       <h2>Portfolio</h2>
 
       <div className="container portfolio__container">
-        {data.map(({ id, image, title, github, demo }) => {
-          return (
-            <article key={id} className="portfolio__item">
-              <div className="portfolio__item-image">
-                <img src={image} alt={title} />
-              </div>
-              <h3>{title}</h3>
-              <div className="portfolio__item-cta">
-                <a href={github} target="_blank" className="btn">
-                  Github
-                </a>
-                <a href={demo} target="_blank" className="btn btn-primary">
-                  Live Demo
-                </a>
-              </div>
-            </article>
-          );
-        })}
+        {data.map(({ id, image, title, github, demo }) => (
+          <motion.div
+            key={id}
+            className="portfolio__item"
+            variants={item}
+            whileHover={{
+              rotate: [0, 15, -15, 0],
+              scale: 1.1,
+            }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <div className="portfolio__item-image">
+              <img src={image} alt={title} />
+            </div>
+            <h3>{title}</h3>
+            <div className="portfolio__item-cta">
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn"
+              >
+                Github
+              </a>
+              <a
+                href={demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
+                Live Demo
+              </a>
+            </div>
+          </motion.div>
+        ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

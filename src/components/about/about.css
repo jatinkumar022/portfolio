@@ -67,6 +67,10 @@
   color: var(--color-light);
 }
 
+.fr_btn {
+  position: absolute;
+  top: 100;
+}
 
 /* ===================MEDIA QUERIES(MEDIUM DEVICES)=================== */
 
@@ -107,4 +111,12 @@
   .about__content p {
     margin: 1.5rem 0;
   }
+}
+
+/* about.css */
+.about__text {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ffffff;
 }

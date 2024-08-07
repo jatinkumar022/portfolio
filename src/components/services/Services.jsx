@@ -1,14 +1,55 @@
 import React from "react";
 import { BiCheck } from "react-icons/bi";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import "./services.css";
+
 const Services = () => {
+  // Hook to detect if the section is in view
+  const { ref, inView } = useInView({
+    threshold: 0.1, // Percentage of the section that must be visible
+  });
+
+  // Define animation variants
+  const sectionVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.3 } },
+  };
+
+  const articleVariantsLeft = {
+    hidden: { opacity: 0, x: -100, y: 100 }, // From upper left
+    visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.4 } },
+  };
+
+  const articleVariantsRight = {
+    hidden: { opacity: 0, x: 100, y: 100 }, // From upper right
+    visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.4 } },
+  };
+
+  const articleVariantsTop = {
+    hidden: { opacity: 0, y: -100 }, // From top
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
-    <section id="services">
+    <motion.section
+      id="services"
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={sectionVariants}
+    >
       <h5>What I Offer</h5>
       <h2>Services</h2>
 
       <div className="container services__container">
-        <article className="service">
+        <motion.article
+          className="service"
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={articleVariantsLeft}
+          transition={{ delay: 0.2 }} // Delay for sequential animation
+        >
           <div className="service__head">
             <h3>Programming Languages</h3>
           </div>
@@ -47,9 +88,15 @@ const Services = () => {
               </p>
             </li>
           </ul>
-        </article>
-        {/* END OF UI/UX */}
-        <article className="service">
+        </motion.article>
+
+        <motion.article
+          className="service"
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={articleVariantsTop}
+          transition={{ delay: 0.4 }} // Delay for sequential animation
+        >
           <div className="service__head">
             <h3>Web Development</h3>
           </div>
@@ -92,9 +139,15 @@ const Services = () => {
               </p>
             </li>
           </ul>
-        </article>
-        {/* END OF WEB DEVELOPMENT */}
-        <article className="service">
+        </motion.article>
+
+        <motion.article
+          className="service"
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={articleVariantsRight}
+          transition={{ delay: 0.6 }} // Delay for sequential animation
+        >
           <div className="service__head">
             <h3>Content Creation</h3>
           </div>
@@ -139,10 +192,9 @@ const Services = () => {
               </p>
             </li>
           </ul>
-        </article>
-        {/* END OF CONTENT CREATION */}
+        </motion.article>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

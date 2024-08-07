@@ -4,7 +4,12 @@
   gap: 3rem;
 }
 
+#services {
+  margin-top: 20rem;
+}
+
 .service {
+
   background: var(--color-bg-variant);
   border-radius: 0 0 2rem 2rem;
   border: 1px solid var(--color-primary);
@@ -71,4 +76,11 @@
     grid-template-columns: 1fr;
     gap: 1.5rem
   }
+}
+
+.service {
+  /* 3D flip effect */
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  will-change: transform;
 }
