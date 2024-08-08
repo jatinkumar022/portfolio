@@ -1,9 +1,7 @@
 import React from "react";
 import "./testimonials.css";
-import AVTR1 from "../../assets/avatar1.jpg";
-import AVTR2 from "../../assets/avatar2.jpg";
-import AVTR3 from "../../assets/avatar3.jpg";
-import AVTR4 from "../../assets/avatar4.jpg";
+import Jain from "../../assets/jain.png";
+import Sau from "../../assets/saurashtra.png";
 
 // import Swiper core and required modules
 import { Pagination } from "swiper/modules";
@@ -17,35 +15,27 @@ import "swiper/css/pagination";
 
 const data = [
   {
-    avatar: AVTR1,
-    name: "Tina Snow",
-    review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi veniam at rerum asperiores sequi nisi accusantium. Consequatur  officiis quia animi necessitatibus, ab eveniet veniam earum Sapiente reprehenderit dolores cum laudantium.",
+    avatar: Sau,
+    name: "Saurashtra University",
+    review: `
+    Bca, Computer ScienceBca, Computer Science
+    Jul 2021 - Mar 2024Jul 2021 - Mar 2024
+    Grade: CGPA: 8.68`,
   },
   {
-    avatar: AVTR2,
-    name: "Damon Salvatore ",
-    review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi veniam at rerum asperiores sequi nisi accusantium. Consequatur  officiis quia animi necessitatibus, ab eveniet veniam earum Sapiente reprehenderit dolores cum laudantium.",
-  },
-  {
-    avatar: AVTR3,
-    name: "Shatta Walle",
-    review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi veniam at rerum asperiores sequi nisi accusantium. Consequatur  officiis quia animi necessitatibus, ab eveniet veniam earum Sapiente reprehenderit dolores cum laudantium.",
-  },
-  {
-    avatar: AVTR4,
-    name: "Kwame Stephen",
-    review:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi veniam at rerum asperiores sequi nisi accusantium. Consequatur  officiis quia animi necessitatibus, ab eveniet veniam earum Sapiente reprehenderit dolores cum laudantium.",
+    avatar: Jain,
+    name: "Jain University ",
+    review: `
+    Master of Computer Applications - MCA,  
+    Computer Science & IT
+    2024-2026`,
   },
 ];
 const Testimonials = () => {
   return (
     <section id="testimonials">
-      <h5>Review from clients</h5>
-      <h2>Testimonials</h2>
+      <h5>My</h5>
+      <h2>Education</h2>
 
       <Swiper
         className="container testimonials__container" // install Swiper modules
@@ -58,10 +48,10 @@ const Testimonials = () => {
           return (
             <SwiperSlide key={index} className="testimonial">
               <div className="client__avatar">
-                <img src={avatar} alt="avatar 1" />
+                <img src={avatar} className="image_uni" alt="avatar 1" />
               </div>
               <h5 className="client__name">{name}</h5>
-              <small className="client__review">{review}</small>
+              <pre className="client__review">{review}</pre>
             </SwiperSlide>
           );
         })}

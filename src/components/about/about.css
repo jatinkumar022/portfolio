@@ -48,13 +48,14 @@
 }
 
 .about__icon {
-  color: var(--color-primary);
+  color: var(--color-primary2);
   font-size: 1.4rem;
   margin-bottom: 1rem;
 }
 
 .about__card h5 {
   font-size: 0.95rem;
+  color: rgb(127, 255, 191);
 }
 
 .about__card small {

@@ -11,6 +11,9 @@ header {
   margin-top: -2rem;
 }
 
+.name {
+  color: var(--color-primary2);
+}
 
 /* =================== CTA ==================== */
 
@@ -19,6 +22,7 @@ header {
   display: flex;
   gap: 1.2rem;
   align-items: center;
+
   justify-content: center
 }
 
@@ -37,11 +41,15 @@ header {
   align-items: center;
 }
 
+.header__socials>a {
+  color: var(--color-primary2);
+}
+
 .header__socials::after {
   content: "";
   width: 1px;
   height: 2rem;
-  background: var(--color-primary);
+  background: var(--color-primary2);
 }
 
 /* =================== ME ==================== */
@@ -63,7 +71,7 @@ header {
   padding: 3rem 0.5rem 0.5rem 0.5rem;
   /* Adjusted padding */
   margin-top: 7rem;
-
+  /* border: 2px solid var(--color-primary2); */
 }
 
 /* =================== SCROLL-DOWN ==================== */
@@ -72,6 +80,7 @@ header {
   transform: rotate(90deg);
   font-weight: 300;
   font-size: 0.9rem;
+  color: var(--color-primary2);
 }
 
 /* ===================MEDIA QUERIES(MEDIUM DEVICES)=================== */

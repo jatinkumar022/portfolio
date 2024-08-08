@@ -1,23 +1,28 @@
 footer {
-  background: var(--color-primary);
+  background: var(--color-bg-variant);
   padding: 3rem 0;
   text-align: center;
   font-size: 0.9rem;
+  color: var(--color-white);
   margin-top: 7rem;
 }
 
 footer a {
-  color: var(--color-bg);
+  color: var(--color-white);
 }
 
 .footer__logo {
   font-size: 2rem;
   font-weight: 500;
+  color: var(--color-primary2);
+
   margin-bottom: 2rem;
   display: inline-block;
 }
 
 .footer__logo:hover {
+  color: var(--color-primary2);
+
   letter-spacing: 0.2rem;
 }
 
@@ -29,7 +34,8 @@ footer a {
   margin: 0 auto 3rem;
 }
 
-.permalinks li:hover {
+.permalinks>li>a:hover {
+  color: var(--color-primary2);
   letter-spacing: 0.1rem;
 }
 
@@ -43,25 +49,34 @@ footer a {
 .footer__socials a {
   background: var(--color-bg);
   color: var(--color-white);
-  padding: 0.8rem;
+  font-size: 20px;
+  padding: 0.5rem;
   border-radius: 0.7rem;
   display: flex;
-  border: 1.5px solid transparent;
+  border: 2px solid transparent;
 }
 
-.footer__socials a:hover {
-  background: transparent;
-  color: var(--color-bg);
-  border-color: var(--color-bg);
 
-}
 
 .footer__copyright {
   margin-bottom: 4rem;
-  color: var(--color-bg);
+  color: var(--color-light);
 }
 
+#facebook:hover {
 
+
+  border-color: #4267B2;
+  /* color: #4267B2; */
+}
+
+#instagram:hover {
+  border-color: #d6249f;
+}
+
+#twitter:hover {
+  border-color: #24bbd6
+}
 
 /* ===================MEDIA QUERIES(SMALL DEVICES)=================== */
 

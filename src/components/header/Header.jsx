@@ -46,6 +46,7 @@ const Header = () => {
         </motion.h5>
         <motion.h1
           initial="hidden"
+          className="name"
           animate={controls}
           variants={headerVariants}
         >

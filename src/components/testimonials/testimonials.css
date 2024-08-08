@@ -2,14 +2,22 @@
   width: 40%;
 }
 
-.client__avatar {
-  width: 4rem;
+
+.image_uni {
+  width: 7rem;
   aspect-ratio: 1/1;
   overflow: hidden;
+  object-fit: cover;
   border-radius: 50%;
   margin: 0 auto 1rem;
   border: 0.4rem solid var(--color-primary-variant);
 }
+
+.client__name {
+  color: var(--color-primary2);
+}
+
+pre {}
 
 .testimonial {
   background: var(--color-bg-variant);
@@ -19,6 +27,9 @@
   user-select: none;
 }
 
+.testimonials__container {
+  --swiper-pagination-color: var(--color-primary2)
+}
 
 /* ===================MEDIA QUERIES(MEDIUM DEVICES)=================== */
 
@@ -39,5 +50,7 @@
 
   .client__review {
     width: var(--container-width-sm);
+    margin-left: -35px;
+    text-align: start;
   }
 }

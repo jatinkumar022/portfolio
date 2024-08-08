@@ -79,7 +79,7 @@ const Contact = () => {
             className="contact__option"
             variants={item}
             whileHover={{
-              border: "2px solid #3498db",
+              border: "2px solid #777777",
               rotate: [0, 10, -10, 0],
             }}
             whileTap={{ scale: 0.95 }}
@@ -99,7 +99,7 @@ const Contact = () => {
             className="contact__option"
             variants={item}
             whileHover={{
-              border: "2px solid #3498db",
+              border: "2px solid #777777",
               rotate: [0, 10, -10, 0],
             }}
             whileTap={{ scale: 0.95 }}
@@ -119,7 +119,7 @@ const Contact = () => {
             className="contact__option"
             variants={item}
             whileHover={{
-              border: "2px solid #3498db",
+              border: "2px solid #777777",
               rotate: [0, 10, -10, 0],
             }}
             whileTap={{ scale: 0.95 }}
