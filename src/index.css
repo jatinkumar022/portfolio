@@ -28,8 +28,23 @@
   --transition: all 400ms ease;
 }
 
+::-moz-selection {
+  /* Code for Firefox */
+  color: white;
+  background: #00ff99;
+}
+
+::selection {
+  color: white;
+  background: #00ff99;
+}
+
 html {
   scroll-behavior: smooth;
+
+}
+
+body {
   overflow-x: hidden;
 }
 
