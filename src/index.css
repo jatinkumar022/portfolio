@@ -46,6 +46,7 @@ html {
 
 body {
   overflow-x: hidden;
+
 }
 
 ::-webkit-scrollbar {
@@ -64,8 +65,9 @@ body {
 /* ===================GENEREL-STYLES=================== */
 
 .container {
-  width: var(--container-width-lg);
+  width: 100vw;
   margin: 0 auto;
+
 }
 
 h1,
